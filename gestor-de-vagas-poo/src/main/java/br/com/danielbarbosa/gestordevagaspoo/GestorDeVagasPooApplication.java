@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class GestorDeVagasPooApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(GestorDeVagasPooApplication.class, args);
+        SpringApplication.run(GestorDeVagasPooApplication.class, args);
 	}
 
 }
