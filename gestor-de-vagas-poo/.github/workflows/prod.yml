@@ -20,5 +20,6 @@ jobs:
 
       - name: Build
         run: |
+          cd gestor-de-vagas-poo
           chmod +x mvnw
           ./mvnw clean package
