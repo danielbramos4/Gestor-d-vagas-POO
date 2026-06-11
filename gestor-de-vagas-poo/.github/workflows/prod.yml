@@ -9,18 +9,22 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: gestor-de-vagas-poo
+
     steps:
-      - name: Checkout do código
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Configurar Java
+      - name: Setup Java
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: 25
 
-      - name: Dar permissão ao Maven Wrapper
+      - name: Permissão Maven Wrapper
         run: chmod +x mvnw
 
-      - name: Compilar projeto
-        run: ./mvnw clean package -DskipTests
+      - name: Build
+        run: ./mvnw clean package -DskipTestsean package -DskipTests
