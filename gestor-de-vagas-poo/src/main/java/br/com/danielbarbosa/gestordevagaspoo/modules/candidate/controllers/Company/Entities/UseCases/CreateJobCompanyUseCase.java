@@ -1,6 +1,5 @@
 package br.com.danielbarbosa.gestordevagaspoo.modules.candidate.controllers.Company.Entities.UseCases;
 
-
 import br.com.danielbarbosa.gestordevagaspoo.modules.candidate.controllers.Company.Entities.JobEntity;
 import br.com.danielbarbosa.gestordevagaspoo.modules.candidate.controllers.Company.Entities.Repositories.JobRepository;
 import org.springframework.beans.factory.annotation.Autowired;
