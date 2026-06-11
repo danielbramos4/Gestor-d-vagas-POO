@@ -1,4 +1,4 @@
-name: CI/CD
+name: Build Maven
 
 on:
   push:
@@ -14,17 +14,13 @@ jobs:
         working-directory: gestor-de-vagas-poo
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Java
-        uses: actions/setup-java@v4
+      - uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: 25
 
-      - name: Permissão Maven Wrapper
-        run: chmod +x mvnw
+      - run: chmod +x mvnw
 
-      - name: Build
-        run: ./mvnw clean package -DskipTestsean package -DskipTests
+      - run: ./mvnw clean package -DskipTests
