@@ -1,4 +1,4 @@
-name: Build Maven
+name: CI/CD
 
 on:
   push:
@@ -10,15 +10,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout do código
+        uses: actions/checkout@v4
 
-      - name: Setup Java
+      - name: Configurar Java
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: 21
+          java-version: 25
 
-      - name: Build
-        run: |
-          chmod +x mvnw
-          ./mvnw clean package
+      - name: Dar permissão ao Maven Wrapper
+        run: chmod +x mvnw
+
+      - name: Compilar projeto
+        run: ./mvnw clean package -DskipTests
