@@ -19,7 +19,7 @@ jobs:
           java-version: 21
 
       - name: Build
-        working-directory: gestor-de-vagas-poo
         run: |
-          chmod +x mvnw
+          ls -la
+          chmod +x ./mvnw
           ./mvnw clean package
