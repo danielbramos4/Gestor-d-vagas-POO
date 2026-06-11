@@ -20,6 +20,8 @@ jobs:
 
       - name: Build
         run: |
-          ls -la
-          chmod +x ./mvnw
+          chmod +x mvnw
           ./mvnw clean package
+
+
+
