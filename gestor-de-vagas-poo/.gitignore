@@ -1,5 +1,8 @@
 HELP.md
-target/
+target/*
+!target/
+!target/gestor-de-vagas-poo-0.0.1-SNAPSHOT.jar
+data/*.trace.db
 .mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/

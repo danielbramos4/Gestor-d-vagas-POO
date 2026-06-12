@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import br.com.danielbarbosa.gestordevagaspoo.modules.candidate.controllers.CandidateEntity;
+import br.com.danielbarbosa.gestordevagaspoo.modules.candidate.entities.CandidateEntity;
 
 class CreateCandidateUseCaseTest {
 

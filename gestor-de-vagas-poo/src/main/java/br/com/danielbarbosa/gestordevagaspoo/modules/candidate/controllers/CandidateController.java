@@ -1,6 +1,7 @@
 package br.com.danielbarbosa.gestordevagaspoo.modules.candidate.controllers;
 
-import br.com.danielbarbosa.gestordevagaspoo.modules.candidate.controllers.UseCase.CreateCandidateUseCase;
+import br.com.danielbarbosa.gestordevagaspoo.modules.candidate.entities.CandidateEntity;
+import br.com.danielbarbosa.gestordevagaspoo.modules.candidate.usecases.CreateCandidateUseCase;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,11 +19,7 @@ public class CandidateController {
 
     @PostMapping("/")
     public ResponseEntity<Object> create(@Valid @RequestBody CandidateEntity candidateEntity) {
-        try {
-            var result = this.createCandidateUseCase.execute(candidateEntity);
-            return ResponseEntity.ok().body(result);
-        }catch(Exception e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
-        }
+        var result = this.createCandidateUseCase.execute(candidateEntity);
+        return ResponseEntity.ok().body(result);
     }
 }

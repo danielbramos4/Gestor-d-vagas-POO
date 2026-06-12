@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-import br.com.danielbarbosa.gestordevagaspoo.modules.candidate.controllers.CandidateEntity;
+import br.com.danielbarbosa.gestordevagaspoo.modules.candidate.entities.CandidateEntity;
 
 public class CandidateEntityTest {
 

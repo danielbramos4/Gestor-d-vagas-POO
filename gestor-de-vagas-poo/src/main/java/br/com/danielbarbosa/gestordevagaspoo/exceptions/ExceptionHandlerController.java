@@ -18,6 +18,7 @@ public class ExceptionHandlerController {
     public ExceptionHandlerController(MessageSource message) {
         this.messageSource = message;
     }
+
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<List<ErrorMessageDTO>> handleMethodArgumentNotValidException(MethodArgumentNotValidException e) {
         List<ErrorMessageDTO> dto = new ArrayList<>();
@@ -29,5 +30,17 @@ public class ExceptionHandlerController {
         });
 
         return new ResponseEntity<>(dto, HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(UserFoundException.class)
+    public ResponseEntity<ErrorMessageDTO> handleUserFoundException(UserFoundException e) {
+        ErrorMessageDTO error = new ErrorMessageDTO(e.getMessage(), "username/email");
+        return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(BusinessValidationException.class)
+    public ResponseEntity<ErrorMessageDTO> handleBusinessValidationException(BusinessValidationException e) {
+        ErrorMessageDTO error = new ErrorMessageDTO(e.getMessage(), "validation");
+        return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
     }
 }
